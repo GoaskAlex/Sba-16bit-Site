@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Paytone+One&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainContainer{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blueviolet;
+    width:900px;
+    
+    
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding:0 20px 0px 20px;
+    width: 100%;
+    background-color: aliceblue;
+
+}
+
+.weblinks a{
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left:20px;
+    font-family:Jaro, Arial, Helvetica, sans-serif;
+}
+.content{
+    padding: 20px;
+    
+}
+.content h2{
+    font-family:Jaro, Arial, Helvetica, sans-serif;
+    font-size: larger;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.highlight{
+    display: flex;
+    
+    
+}
+footer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(./img/city.gif);
+}city
+.socials{
+    font-family:Jaro, Arial, Helvetica, sans-serif;
+    font-size: larger;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
