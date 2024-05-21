@@ -1,63 +1,302 @@
-@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Jersey+15&family=Viga&display=swap');
+
+@property --gradient-angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.mainContainer{
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: blueviolet;
-    width:900px;
-    
-    
-}
+
 
 .navbar{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    padding:0 20px 0px 20px;
+    
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: left;
     width: 100%;
-    background-color: aliceblue;
+    align-items: center;
+    border-width: 5px;
+    border-bottom-style:ridge;
+    }
 
+
+ .navbar .logo{
+    grid-area: 1/1;
+    z-index: 0;
+    padding-left:20px;
+ }
+ .logo img{
+    border-radius: 100%;
+    box-shadow:3px 3px 5px 1px black;
+ }   
+.navbar .weblinks{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #a8577e;
+    padding: 10px;
+    padding-left:100px;
+    grid-area: 1/1;
+    border-color: #3a0ca3;
+    border-style: solid;
+    border-left:none ;
+    border-right: none;
+    border-width:5px;
+    box-shadow:1px 4px 5px 1px;
 }
-
 .weblinks a{
-    font-weight: 600;
-    font-size: 20px;
+    position: relative;
+    font-weight: 80px;
+    font-size: 40px;
     text-decoration: none;
-    margin-left:20px;
-    font-family:Jaro, Arial, Helvetica, sans-serif;
+    margin-left:10px;
+    font-family:"Jersey 15", Arial, Helvetica, sans-serif;
+    color: white;
 }
+
+.weblinks a::before{
+    content:'';
+    position: absolute;
+    top:100%;
+    left:0;
+    width: 0;
+    height: 2px;
+    background: #3a0ca3;
+    transition:.3s;
+}
+.navbar a:hover::before{
+    width: 100%;
+}
+
 .content{
-    padding: 20px;
+    padding: 10px;
+    width: 50%;
+    margin-right: 10px;
     
 }
 .content h2{
-    font-family:Jaro, Arial, Helvetica, sans-serif;
-    font-size: larger;
+    font-weight: 50;
+    font-family:Viga, Arial, Helvetica, sans-serif;
+    font-size: 20px;
     margin-top: 15px;
     margin-bottom: 5px;
 }
-.highlight{
+.content p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    text-align: left;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-top: 10px;
+    
+}
+.content img{
+    box-shadow:6px 3px 5px 1px #320650;
+    margin-top: 5px;
+
+}
+.reviewList .subhead{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.reviewList{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    box-shadow: 1px 1px 4px 1px;
+    padding:10px
+}
+.reviewList .summary{
     display: flex;
     
-    
+}
+
+.reviewList h2{
+    font-size: 30px;
+}
+.reviewList img{
+    width: 300px;
+    height: 150px;
+    padding-right: 20px;
+}
+.highlight{
+    display: flex;
+    text-align: center;
 }
 footer{
     display: flex;
     width: 100%;
     justify-content: center;
-    height: 200px;
+    align-items: center;
+    height: 110px;
     background-position: center;
     background-size: cover;
     background-image: url(./img/city.gif);
-}city
-.socials{
-    font-family:Jaro, Arial, Helvetica, sans-serif;
-    font-size: larger;
+}
+
+.media{
+    background-color: white;
+    opacity: .5;
     margin-top: 15px;
     margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
 }
+
+.media, p h1{
+    font-family:"Jersey 15", Arial, Helvetica, sans-serif;
+    font-size: larger;
+    color: black;
+    font-weight: bolder;
+}
+
+.mainContainer{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    
+    background: var(--clr-1);
+    border-radius: .3rem;
+    position: relative;
+    }
+
+.mainContainer::before,
+.mainContainer::after{
+    content: "";
+    position: absolute;
+    inset:-.5rem;
+    z-index: -1;
+    background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-5),
+    var(--clr-4),
+    var(--clr-3),
+    var(--clr-2));
+    border-radius: inherit;
+    filter:blur(3.5rem);
+    animation: rotation 20s linear infinite;
+}
+
+@keyframes rotation{
+    0%{--gradient-angle:0deg;}
+    100%{--gradient-angle:360deg;}
+}
+:root{
+    --clr-1:#7209b7;
+    --clr-2:#3a0ca3;
+    --clr-3:#4361ee;
+    --clr-4:#4cc9f0;
+    --clr-5:#f72585;
+}
+
+.wrapper {
+    margin:auto;
+    width: 400px;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  h2 {
+    font-family:"jersey 15",Arial, Helvetica, sans-serif;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .input-field {
+    position: relative;
+    border-bottom: 2px solid #ccc;
+    margin: 15px 0;
+  }
+  .input-field label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.15s ease;
+  }
+  .input-field input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+  }
+  .input-field input:focus~label,
+  .input-field input:valid~label {
+    font-size: 0.8rem;
+    top: 10px;
+    transform: translateY(-120%);
+  }
+  .forget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 0 35px 0;
+    color: #fff;
+  }
+  #remember {
+    accent-color: #fff;
+  }
+  .forget label {
+    display: flex;
+    align-items: center;
+  }
+  .forget label p {
+    margin-left: 8px;
+  }
+  .wrapper a {
+    color: #efefef;
+    text-decoration: none;
+  }
+  .wrapper a:hover {
+    text-decoration: underline;
+  }
+  button {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+  }
+  button:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .register {
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+  }
